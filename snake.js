@@ -57,16 +57,13 @@ function draw(){
 	for(let i=0;i<snake.length;i++){
 		ctx.fillStyle = (i==0)? "green" : "white";
 		ctx.fillRect(snake[i].x,snake[i].y,box,box);
-
 		ctx.strokeStyle = "red";
 		ctx.strokeRect(snake[i].x,snake[i].y,box,box);
 	}
 	//old head position
 	let snakeX = snake[0].x;
 	let snakeY = snake[0].y;
-
-
-
+	
 	//which direction
 	if(d == "LEFT") snakeX -= box;
 	if(d == "UP") snakeY -= box;
@@ -94,8 +91,6 @@ function draw(){
 		snakeY < 3*box || snakeY > 17*box || collision(newHead, snake)){
 		clearInterval(game);
 	}
-
-
 
 	snake.unshift(newHead);
 
